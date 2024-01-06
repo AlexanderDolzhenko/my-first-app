@@ -1,9 +1,7 @@
-<app-header></app-header>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
-    </div>
+<main class="bg-slate-800 text-slate-100 min h-screen relative">
+  <app-header></app-header>
+  <div class="container mx-auto p-4">
+    <router-outlet></router-outlet>
   </div>
-</div>
+  <router-outlet></router-outlet>
+</main>
