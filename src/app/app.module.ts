@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import { ProfileComponent } from './pages/profile/profile.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { TransactionsFormComponent } from './components/transactions-form/transactions-form.component';
 import { TransactionsTableComponent } from './components/transactions-table/transactions-table.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 
 @NgModule({
@@ -19,7 +21,7 @@ import { TransactionsTableComponent } from './components/transactions-table/tran
     AppComponent,
     HomeComponent,
     LoginComponent,
-    ProfileComponent,
+    UserProfileComponent,
     SignupComponent,
     HeaderComponent,
     CategoriesComponent,
@@ -29,6 +31,8 @@ import { TransactionsTableComponent } from './components/transactions-table/tran
   imports: [
     BrowserModule,
     FormsModule,
+    FontAwesomeModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

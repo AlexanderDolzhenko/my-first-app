@@ -3,7 +3,8 @@ import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./pages/home/home.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { SignupComponent } from "./pages/signup/signup.component";
-import { ProfileComponent } from "./pages/profile/profile.component";
+import { UserProfileComponent } from "./pages/user-profile/user-profile.component";
+
 
 const routes: Routes = [
   {
@@ -20,14 +21,14 @@ const routes: Routes = [
     component: SignupComponent
   },
   {
+    path: 'profile',
+    component: UserProfileComponent
+  },
+  {
     path: '**',
     component: HomeComponent,
     redirectTo: ''
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent
-  },
+  }
 ];
 
 @NgModule({
