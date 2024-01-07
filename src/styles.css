@@ -1,3 +1,4 @@
+@import 'ngx-toastr/toastr';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,7 +18,7 @@
     @apply rounded-sm text-sm border-transparent bg-slate-700 p-2 outline-none border focus:border-blue-500;
   }
   .btn {
-    @apply text-sm py-2 px-4 rounded-sm text-white transition-colors;
+    @apply text-sm py-2 px-4 rounded-sm text-white transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed;
   }
 }
 
