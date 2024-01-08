@@ -4,13 +4,16 @@ import { HomeComponent } from "./pages/home/home.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { SignupComponent } from "./pages/signup/signup.component";
 import { UserProfileComponent } from "./pages/user-profile/user-profile.component";
+import { authGuard } from "./guards/auth.guard";
+
 
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    title: 'Home'
+    title: 'Home',
+    // canActivate: [authGuard()]
   },
   {
     path: 'login',
@@ -22,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    component: UserProfileComponent
+    component: UserProfileComponent,
+    // canActivate: [authGuard()]
   },
   {
     path: '**',

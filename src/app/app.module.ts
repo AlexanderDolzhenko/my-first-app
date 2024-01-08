@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { TransactionsFormComponent } from './components/transactions-form/transactions-form.component';
 import { TransactionsTableComponent } from './components/transactions-table/transactions-table.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AuthInterCeptor } from './interceptors/auth.interceptor';
 
 
 
@@ -40,7 +41,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ToastrModule.forRoot(),
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterCeptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

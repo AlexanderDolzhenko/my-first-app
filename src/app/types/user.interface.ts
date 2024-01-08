@@ -3,4 +3,8 @@ export interface IAuthService {
   password: string;
 }
 
-
+export interface IUser {
+  id: number;
+  email: string;
+  token: string
+}
