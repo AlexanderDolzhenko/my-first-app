@@ -36,4 +36,14 @@ export class CategoryService {
       this.toastr.warning('deleted')
     })
   }
+
+  update(id: number, title: string) {
+    this.http.patch(`categories/category/${id}`, {title}).subscribe(() => {
+      this.categoriesSig.update((categories) =>
+        categories.map((ctg) =>
+          (ctg.id === id ? {...ctg, title} : ctg) )
+          )
+          this.toastr.success('updated')
+    })
+  }
 }

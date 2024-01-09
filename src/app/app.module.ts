@@ -16,6 +16,7 @@ import { TransactionsFormComponent } from './components/transactions-form/transa
 import { TransactionsTableComponent } from './components/transactions-table/transactions-table.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthInterCeptor } from './interceptors/auth.interceptor';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -39,6 +40,7 @@ import { AuthInterCeptor } from './interceptors/auth.interceptor';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    NgxPaginationModule,
     AppRoutingModule,
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterCeptor, multi: true}],

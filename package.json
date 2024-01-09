@@ -23,6 +23,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "bootstrap": "^3.4.1",
     "firebase": "^10.7.1",
+    "ngx-pagination": "^6.0.3",
     "ngx-toastr": "^18.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

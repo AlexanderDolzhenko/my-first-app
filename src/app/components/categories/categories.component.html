@@ -5,7 +5,7 @@
       *ngFor="let category of this.categoryService.categoriesSig()">
         <p>{{category.title}}</p>
 
-        <button class="absolute left-2">
+        <button class="absolute left-2" (click)="edit(category.id, category.title)" >
           <fa-icon [icon]="faEdit"></fa-icon>
         </button>
 
@@ -19,6 +19,15 @@
   <form
   [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
     <input type="text" placeholder="Category name..." class="input flex w-full" formControlName="title" required/>
-    <button class="btn btn-green mt-2 w-full flex" type="submit">Submit</button>
+    <button class="btn btn-green mt-2 w-full flex justify-center" type="submit"
+    [ngClass]="{
+      'btn-green': method === 'create',
+      'bg-amber-400': method === 'update'
+    }">
+
+
+    <span *ngIf="method === 'create'">Create</span>
+    <span *ngIf="method === 'update'">Update</span>
+  </button>
   </form>
 </div>
